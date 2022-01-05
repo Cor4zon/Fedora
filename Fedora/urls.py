@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from people import urls
-from artifacts import urls
 
 urlpatterns = [
+    path("accounts/", include("django.contrib.auth.urls")),
     path("people/", include("people.urls")),
     path("artifacts/", include("artifacts.urls")),
     path('admin/', admin.site.urls),
